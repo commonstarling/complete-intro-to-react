@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>svideo</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="node_modules/react/dist/react.js"></script>
+  <script src="node_modules/react-dom/dist/react-dom.js"></script>
+  <script>
+    const MyTitle = function(props) {
+      return (
+        React.createElement('div', null, React.createElement('h1', {style: {color: props.color}}, props.title))
+      )
+    }
+
+    const MyFirstComponent = function() {
+      return React.createElement('div', null,
+        [React.createElement(MyTitle, {title: 'Game of Thrones', color: 'blue'}),
+        React.createElement(MyTitle, {title: 'Insecure', color: 'red'}),
+        React.createElement(MyTitle, {title: 'The Bachelor', color: 'green'}),
+        React.createElement(MyTitle, {title: 'Married at First Sight', color: 'orange'})]
+      )
+    }
+
+    ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'));
+  </script>
+</body>
+</html>
